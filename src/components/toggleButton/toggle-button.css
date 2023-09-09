@@ -1,0 +1,96 @@
+.switch-container{
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.toggle-label {
+    display: flex;
+    width: 63px;
+    height: 35px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 6px;
+    background: #222;
+    border-radius: 50px;
+    cursor: pointer;
+    position: relative;
+  }
+  .toggle-label img {
+    width: 24px;
+  }
+  .toggle-label .fa-sun {
+    color: gold;
+    transition: 0.8s;
+    position: absolute;
+    right: 7px;
+    top: 5px;
+  }
+  .toggle-label .fa-moon {
+    color: #fff;
+    transition: 0.8s;
+  }
+  .toggle-label .ball {
+    display: none;
+  }
+  .toggle-input:checked + .toggle-label .fa-sun {
+    transform: translateX(-43px);
+  }
+  .toggle-input:checked + .toggle-label .fa-moon {
+    transform: translateX(43px);
+  }
+  .toggle-label .fa-sun {
+    opacity: 1;
+  }
+  .toggle-input:checked + .toggle-label .fa-sun {
+    opacity: 0;
+  }
+  .toggle-label .fa-moon {
+    opacity: 0;
+  }
+  .toggle-input:checked + .toggle-label .fa-moon {
+    opacity: 1;
+  }
+  .toggle-label .ball {
+    position: absolute;
+    display: block;
+    width: 25px;
+    height: 25px;
+    top: 5px;
+    left: 5px;
+    background: #fff;
+    border-radius: 50%;
+    transition: 0.8s;
+  }
+  .toggle-input:checked + .toggle-label .ball {
+    transform: translateX(40px);
+  }
+  .toggle-label .fa-moon {
+    transform: translateX(43px);
+  }
+  .toggle-input:checked + .toggle-label .fa-moon {
+    transform: translateX(0);
+  }
+  .toggle-label {
+    transition: 0.3s;
+  }
+  .toggle-input:checked + .toggle-label {
+    background: #c0c0c0;
+  }
+  .toggle-input:checked + .toggle-label .ball {
+    background: #222;
+  }
+  .toggle-input {
+    display: none;
+  }
+  .toggle-input:checked + .toggle-label .fa-sun {
+    transform: translateX(-43px) rotate(160deg);
+  }
+  .toggle-label .fa-moon {
+    transform: translateX(43px) rotate(250deg);
+  }
+  .toggle-input:checked + .toggle-label .fa-moon {
+    transform: translateX(0), rotate(0);
+  }

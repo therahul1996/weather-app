@@ -1,38 +1,214 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.weather-app {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  transition: background-image 0.5s ease-in-out;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding: 15px;
 }
-
-.App-link {
-  color: #61dafb;
+.light-theme {
+  background-image: url("/src/images/morning-bg.jpg");
+  background-size: 100% 100%;
+  background-color: #ffffff;
+  color: #000;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.dark-theme {
+  background-image: url("/src/images/night-bg.jpg");
+  background-size: 100% 100%;
+  color: #fff;
+}
+.container {
+  max-width: 1000px;
+  width: 1000px;
+  margin: auto;
+}
+@media (max-width: 767px) {
+  .light-theme {
+    background-size: cover;
   }
-  to {
-    transform: rotate(360deg);
+  .weather-app {
+    bottom: unset;
+  }
+}
+/* parent card */
+.parent-card-group {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 10px;
+}
+.parent-card-group .card1 {
+  background: rgba(255, 255, 255, 0.5);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  padding: 20px;
+  border-radius: 14px;
+  width: 70%;
+  position: relative;
+}
+.card1 h1 {
+  margin: 0;
+  text-align: right;
+  font-size: 40px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.card1 h4 {
+  text-align: right;
+  margin-top: 0;
+}
+.card1 .time-and-temp {
+  position: absolute;
+  bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  left: 20px;
+  right: 20px;
+  align-items: flex-end;
+}
+.card1 .time-and-temp h3 {
+  margin: 0;
+  font-size: 30px;
+}
+.card1 .time-and-temp p {
+  margin: 0;
+}
+.card1 .time-and-temp h2 {
+  margin: 0;
+  font-size: 50px;
+}
+.parent-card-group .card2 {
+  background: rgba(255, 255, 255, 0.5);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  padding: 20px;
+  border-radius: 14px;
+  width: 30%;
+}
+.card2 .day-or-night-sec {
+  text-align: center;
+}
+.card2 .day-or-night-sec svg {
+  width: 80px;
+}
+.dark-theme .card2 .day-or-night-sec svg {
+  fill: #ffffff;
+}
+.card2 .day-or-night-sec h3 {
+  font-size: 35px;
+  margin: 5px 0 15px;
+}
+.card2 .searchbar {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.card2 .searchbar .search-input {
+  width: 80%;
+  height: 40px;
+  padding: 15px;
+  box-sizing: border-box;
+  border: 0;
+  border-radius: 14px 0 0 14px;
+  outline: none;
+}
+.card2 .searchbar .search-btn {
+  height: 40px;
+  width: 20%;
+  border: 0;
+  border-radius: 0 14px 14px 0;
+  cursor: pointer;
+  background-color: #f2f2f2;
+}
+.search-btn svg {
+  width: 25px;
+}
+.card2 .city-name {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.card2 .city-name svg {
+  width: 33px;
+}
+.dark-theme .card2 .city-name svg path {
+  fill: #ffffff;
+}
+@media (max-width: 767px) {
+  .parent-card-group {
+    flex-wrap: wrap;
+    margin-top: 55px;
+  }
+  .parent-card-group .card1 {
+    width: 100%;
+    height: 170px;
+  }
+  .card1 .time-and-temp h2 {
+    font-size: 40px;
+}
+.card1 .time-and-temp p {
+  font-size: 13px;
+}
+  .parent-card-group .card2 {
+    width: 100%;
+  }
+}
+/* child-card */
+.child-card-group {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 10px;
+  margin-top: 15px;
+}
+.child-card-group .card {
+  width: 25%;
+  background: rgba(255, 255, 255, 0.5);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 14px;
+  padding: 20px;
+  box-sizing: border-box;
+}
+.child-card-group .card svg {
+  width: 40px;
+}
+.dark-theme .child-card-group .card svg {
+  fill: #ffffff;
+}
+.dark-theme .child-card-group .card svg path {
+  stroke: #ffffff;
+  fill: #ffffff;
+}
+.child-card-group .card h2 {
+  font-size: 26px;
+  margin-bottom: 0;
+  font-family: fantasy;
+  white-space: nowrap;
+}
+.child-card-group .card h4 {
+  text-align: right;
+  margin-top: 0;
+  font-weight: 400;
+}
+@media (max-width: 767px) {
+  .child-card-group {
+    flex-wrap: wrap;
+  }
+  .child-card-group .card{
+    width: 48%;
+  }
+  .child-card-group .card h2 {
+    font-size: 18px;
+  }
+  .child-card-group .card svg {
+    width: 30px;
   }
 }
