@@ -1,0 +1,14 @@
+.weather-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.weather-loader{
+    width: 250px;
+    margin: 0 auto;
+}
+@media(max-width: 767px){
+    .weather-loader{
+        width: 150px;
+    }
+}

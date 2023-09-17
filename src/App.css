@@ -32,6 +32,7 @@
   }
   .weather-app {
     bottom: unset;
+    min-height: 100%;
   }
 }
 /* parent card */
@@ -94,11 +95,29 @@
 .card2 .day-or-night-sec {
   text-align: center;
 }
-.card2 .day-or-night-sec svg {
-  width: 80px;
+.card2 .day-or-night-sec .morning {
+  display: none;
 }
-.dark-theme .card2 .day-or-night-sec svg {
-  fill: #ffffff;
+.card2 .day-or-night-sec .night {
+  display: none;
+}
+.card2 .day-or-night-sec img {
+  width: 70px;
+  margin: auto;
+}
+.card2 .day-or-night-sec h2 {
+  margin: 10px 0;
+}
+.dark-theme .card2 .day-or-night-sec img {
+  filter: brightness(0) invert(1);
+}
+.light-theme .card2 .day-or-night-sec .morning {
+  transition: all .3s ease-in-out;
+  display: block;
+}
+.dark-theme .card2 .day-or-night-sec .night {
+  transition: all .3s ease-in-out;
+  display: block;
 }
 .card2 .day-or-night-sec h3 {
   font-size: 35px;
@@ -126,7 +145,7 @@
   cursor: pointer;
   background-color: #f2f2f2;
 }
-.search-btn svg {
+.search-btn img {
   width: 25px;
 }
 .card2 .city-name {
@@ -150,7 +169,10 @@
     height: 170px;
   }
   .card1 .time-and-temp h2 {
-    font-size: 40px;
+    font-size: 25px;
+}
+.card1 .time-and-temp h3 {
+  font-size: 22px;
 }
 .card1 .time-and-temp p {
   font-size: 13px;
@@ -177,20 +199,15 @@
   padding: 20px;
   box-sizing: border-box;
 }
-.child-card-group .card svg {
+.child-card-group .card img {
   width: 40px;
 }
-.dark-theme .child-card-group .card svg {
-  fill: #ffffff;
-}
-.dark-theme .child-card-group .card svg path {
-  stroke: #ffffff;
-  fill: #ffffff;
+.dark-theme .child-card-group .card img {
+  filter: brightness(0) invert(1);
 }
 .child-card-group .card h2 {
   font-size: 26px;
   margin-bottom: 0;
-  font-family: fantasy;
   white-space: nowrap;
 }
 .child-card-group .card h4 {
